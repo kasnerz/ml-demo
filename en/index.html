@@ -16,13 +16,13 @@
     <div class="image-panel">
       <div class="image-frame">
         <img id="quiz-image" src="" alt="Quiz image" style="display: none;">
-        <div id="image-placeholder" class="image-placeholder">
+        <div id="image-placeholder" class="image-placeholder" hidden>
           <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <rect width="18" height="18" x="3" y="3" rx="2" ry="2"></rect>
             <circle cx="9" cy="9" r="2"></circle>
             <path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"></path>
           </svg>
-          <p data-i18n="placeholder">Select a mode to start the quiz</p>
+          <p data-i18n="placeholder">Loading image...</p>
         </div>
       </div>
     </div>
@@ -30,7 +30,6 @@
     <div class="controls-panel">
       <div class="panel-header">
         <h1 class="panel-title" data-i18n="heading">Machine Learning Quiz</h1>
-        <a id="lang-switch" class="lang-switch" href="../" hreflang="cs">Cestina</a>
       </div>
 
       <div class="mode-selector">
@@ -57,14 +56,12 @@
         <span id="total-images">-</span>
       </div>
 
-      <div class="loading-spinner" id="loading-spinner">
+      <div class="loading-spinner" id="loading-spinner" style="display: block;">
         <div class="spinner" role="status" aria-label="Loading"></div>
         <p data-i18n="loading_images">Loading images...</p>
       </div>
 
       <p class="quiz-question" data-i18n="question">Which class does this image belong to?</p>
-      <p id="status-message" class="status-message" data-state="info" aria-live="polite"></p>
-
       <div id="answer-buttons" hidden></div>
 
       <div class="navigation-controls">
@@ -119,11 +116,13 @@
     </div>
   </dialog>
 
+  <script src="../assets/js/quiz-config.js"></script>
   <script>
     window.ML_QUIZ_BOOTSTRAP = {
       lang: 'en',
       basePath: '..',
-      langSwitchHref: '../'
+      langSwitchHref: '../',
+      quizConfig: window.ML_QUIZ_CONFIG
     };
   </script>
   <script src="../assets/js/translations.js"></script>

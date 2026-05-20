@@ -15,6 +15,7 @@
     const bootstrap = window.ML_QUIZ_BOOTSTRAP || {};
     const lang = bootstrap.lang || 'cs';
     const basePath = bootstrap.basePath || '.';
+    const initialQuizConfig = bootstrap.quizConfig || window.ML_QUIZ_CONFIG || null;
     const translations = (window.ML_QUIZ_TRANSLATIONS || {})[lang] || window.ML_QUIZ_TRANSLATIONS.cs;
     const dialog = qs('#results-dialog');
 
@@ -60,6 +61,9 @@
 
     function showStatus(message, stateName) {
       const status = qs('#status-message');
+      if (!status) {
+        return;
+      }
       status.textContent = message;
       status.dataset.state = stateName || 'info';
     }
@@ -224,14 +228,6 @@
       initializeQuiz(mode);
     }
 
-    async function loadQuizConfig() {
-      const response = await fetch(assetPath('assets/data/quiz-config.json'));
-      if (!response.ok) {
-        throw new Error('Failed to load quiz configuration');
-      }
-      return response.json();
-    }
-
     applyTranslations();
 
     qs('#prev-btn').addEventListener('click', function () {
@@ -273,14 +269,12 @@
       });
     });
 
-    loadQuizConfig()
-      .then(function (config) {
-        state.quizConfig = config;
-        setMode('train');
-      })
-      .catch(function (error) {
-        console.error(error);
-        showStatus(translations.error_loading_config, 'error');
-      });
+    if (!initialQuizConfig) {
+      showStatus(translations.error_loading_config, 'error');
+      return;
+    }
+
+    state.quizConfig = initialQuizConfig;
+    setMode('train');
   });
 })();
