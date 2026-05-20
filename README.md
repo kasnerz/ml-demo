@@ -1,39 +1,30 @@
-# ml-demo
+# ML Quiz
 
-Static extraction of the ML quiz from the original Flask app.
+An interactive quiz that teaches you how machine learning classification works — no prior knowledge needed.
 
-## What is included
+![ML Quiz screenshot](assets/img/screenshot.png)
 
-- Czech quiz at `/`
-- English quiz at `/en/`
-- Static JSON configuration in `assets/data/quiz-config.json`
-- Static image assets in `assets/img/train` and `assets/img/test`
-- Vanilla JavaScript app in `assets/js/quiz-app.js`
+You are shown an image and asked to pick which class it belongs to. First you go through a **training set** to build your intuition, then a **test set** to see how well you've learned the pattern. It's the same workflow a machine learning model follows when it's trained and evaluated.
 
-## Local preview
+The quiz is available in Czech and English:
 
-Run a simple static server from the repository root:
+- **Czech:** [zdenekkasner.cz/ml-demo/](https://zdenekkasner.cz/ml-demo/)
+- **English:** [zdenekkasner.cz/ml-demo/en/](https://zdenekkasner.cz/ml-demo/en/)
+
+## Run it locally
+
+You only need Python — no install, no build step:
 
 ```bash
 python3 -m http.server 4173
 ```
 
-Then open:
+Then open `http://127.0.0.1:4173/` in your browser.
 
-- `http://127.0.0.1:4173/`
-- `http://127.0.0.1:4173/en/`
+## How it's built
 
-## GitHub Pages deployment
+Plain HTML, CSS, and JavaScript — no framework, no backend. The quiz questions and images are loaded from a static JSON file, so the whole thing runs directly from GitHub Pages without a server.
 
-1. Push this repository to GitHub.
-2. In the GitHub repository, open `Settings -> Pages`.
-3. Set `Build and deployment` to `Deploy from a branch`.
-4. Select branch `main` and folder `/ (root)`.
-5. Save and wait for Pages to publish.
+## Hosting your own copy
 
-If your main GitHub Pages site already uses the custom domain `zdenekkasner.cz`, this project page should be reachable at:
-
-- `https://zdenekkasner.cz/ml-demo/`
-- `https://zdenekkasner.cz/ml-demo/en/`
-
-Do not add a `CNAME` file to this repository unless you want this repository to own a separate domain by itself.
+Fork the repo, go to **Settings → Pages**, choose to deploy from the `main` branch root, and GitHub will publish it automatically. That's it.
