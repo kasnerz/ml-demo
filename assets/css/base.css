@@ -1,0 +1,80 @@
+/* ============================================================
+   Design tokens & Pico v2 theme overrides
+   Computational Creativity Web App
+   ============================================================ */
+
+:root {
+    --font-display: 'Patrick Hand SC', 'Comic Sans MS', cursive;
+    --font-body: 'Source Sans 3', 'Source Sans Pro', system-ui, sans-serif;
+    --neutral-bg: #faf7f2;
+    --neutral-surface: #f0ebe0;
+    --neutral-border: #d6cfc4;
+    --neutral-text: #1c1916;
+    --neutral-muted: #7a7268;
+    --accent: #e54d1a;
+    --accent-deep: #be3908;
+    --accent-subtle: #fdeae2;
+    --success: #2d8b5c;
+    --success-subtle: #dff3ea;
+    --error: #c0392b;
+    --error-subtle: #fde8e6;
+    --space-xs: 4px;
+    --space-sm: 8px;
+    --space-md: 16px;
+    --space-lg: 24px;
+    --space-xl: 40px;
+    --space-2xl: 64px;
+    --radius-sm: 6px;
+    --radius-md: 12px;
+    --radius-lg: 20px;
+    --radius-full: 9999px;
+    --pico-font-family-sans-serif: var(--font-body);
+    --pico-color: var(--neutral-text);
+    --pico-background-color: var(--neutral-bg);
+    --pico-muted-color: var(--neutral-muted);
+    --pico-muted-border-color: var(--neutral-border);
+    --pico-primary: var(--accent);
+    --pico-primary-background: var(--accent);
+    --pico-primary-hover: var(--accent-deep);
+    --pico-primary-hover-background: var(--accent-deep);
+    --pico-primary-focus: rgba(229, 77, 26, 0.25);
+    --pico-primary-inverse: #ffffff;
+    --pico-border-radius: var(--radius-md);
+    --pico-card-background-color: var(--neutral-surface);
+    --pico-card-border-color: var(--neutral-border);
+    --pico-card-sectioning-background-color: var(--neutral-surface);
+    --pico-form-element-background-color: var(--neutral-bg);
+    --pico-form-element-border-color: var(--neutral-border);
+    --pico-form-element-focus-color: var(--accent);
+    --pico-form-element-placeholder-color: var(--neutral-muted);
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --neutral-bg: #1a1714;
+        --neutral-surface: #241f1a;
+        --neutral-border: #3a342c;
+        --neutral-text: #f5f1ea;
+        --neutral-muted: #9e9082;
+        --accent: #f06030;
+        --accent-deep: #e54d1a;
+        --accent-subtle: #3d1a09;
+    }
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--neutral-bg);
+    color: var(--neutral-text);
+    line-height: 1.6;
+}
+
+h1,
+h2,
+h3 {
+    font-family: var(--font-display);
+    font-weight: 400;
+    line-height: 1.2;
+    letter-spacing: 0.01em;
+    color: var(--neutral-text);
+}
