@@ -81,7 +81,6 @@
     function resetAnswerButtons() {
       qsa('.answer-btn').forEach(function (button) {
         button.classList.remove('correct', 'incorrect');
-        button.disabled = false;
       });
     }
 
@@ -90,7 +89,6 @@
       const correctIndex = getAnswerMap(state.currentMode)[imageName];
 
       qsa('.answer-btn').forEach(function (button, index) {
-        button.disabled = true;
         if (index === correctIndex) {
           button.classList.add('correct');
         } else if (index === selectedIndex && index !== correctIndex) {
