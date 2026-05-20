@@ -66,13 +66,13 @@ body {
     flex: 1;
     min-width: 280px;
     max-width: 380px;
-    padding: var(--space-xl) var(--space-lg) var(--space-lg);
+    padding: var(--space-lg);
     background: var(--neutral-surface);
     border-left: 1.5px solid var(--neutral-border);
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    gap: var(--space-md);
+    justify-content: center;
+    gap: var(--space-sm);
     overflow-y: auto;
 }
 
@@ -214,9 +214,9 @@ body {
 
 .answer-btn {
     width: 100%;
-    padding: var(--space-md) var(--space-lg);
+    padding: 10px 20px;
     font-family: var(--font-display);
-    font-size: 1.35rem;
+    font-size: 1.2rem;
     font-weight: 400;
     text-align: center;
     background: var(--neutral-bg);
@@ -225,7 +225,7 @@ body {
     border-radius: var(--radius-md);
     cursor: pointer;
     transition: border-color 0.15s ease-out, transform 0.1s ease-out, background 0.15s ease-out, color 0.15s ease-out;
-    min-height: 56px;
+    min-height: 48px;
 }
 
 .answer-btn:hover:not(:disabled) {
